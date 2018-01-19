@@ -72,7 +72,7 @@ function processPostback(event) {
                 name = bodyObj.first_name;
                 greeting = "Hi " + name + ". ";
             }
-            var message = greeting + "My name is SP Movie Bot. I can tell you various details regarding movies. What movie would you like to know about?";
+            var message = greeting + "I will guide you through our onboarding process for Alexandrite. You must have already passed the initial assessment before being introduced to me. Can you tell me when you had your initial assessment?";
             sendMessage(senderId, {text: message});
         });
     } else if (payload === "Correct") {
@@ -171,6 +171,7 @@ function findMovie(userId, movieTitle) {
         } else {
             console.log("err " + error );
             console.log("statuscode " + response.statusCode);
+movieObj
             sendMessage(userId, {text: "Something went wrong in findMovie. Try again."});
         }
     });
