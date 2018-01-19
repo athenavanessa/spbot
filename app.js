@@ -169,6 +169,8 @@ function findMovie(userId, movieTitle) {
                 sendMessage(userId, {text: movieObj.Error});
             }
         } else {
+            console.log("err " + error );
+            console.log("statuscode " + response.statusCode);
             sendMessage(userId, {text: "Something went wrong in findMovie. Try again."});
         }
     });
